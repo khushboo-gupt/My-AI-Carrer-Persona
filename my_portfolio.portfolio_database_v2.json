@@ -1,0 +1,272 @@
+[{
+  "_id": {
+    "$oid": "69a30c6646e88094bc2555f4"
+  },
+  "category": "summary",
+  "profile": "Data Consultant with 2+ years of experience delivering data-driven solutions across analytics, data science, and early-stage data engineering. Experienced in building end-to-end ML and analytics systems from data extraction to deployment."
+},
+{
+  "_id": {
+    "$oid": "69a30dac46e88094bc2555f5"
+  },
+  "category": "skills",
+  "technical": [
+    "Python",
+    "SQL",
+    "AWS Lambda",
+    "AWS EC2",
+    "AWS S3",
+    "AWS IAM",
+    "Power BI",
+    "Yellowfin BI",
+    "Amazon Lookout for Metrics",
+    "Data Cleaning",
+    "EDA",
+    "Forecasting",
+    "Statistical Analysis",
+    "Hypothesis Testing",
+    "Root Cause Analysis"
+  ],
+  "soft": [
+    "Analytical Thinking",
+    "Communication",
+    "Attention to Detail",
+    "Problem Solving"
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a30ddd46e88094bc2555f6"
+  },
+  "category": "experience",
+  "company": "Josh Software Pvt. Ltd",
+  "role": "Data Consultant",
+  "duration": "Feb 2025 – Present",
+  "work": [
+    "Developed LightFM-based food recommendation system with 89% accuracy deployed via FastAPI on AWS EC2.",
+    "Built Python time-series forecasting models improving accuracy by 14%.",
+    "Performed root cause analysis for business insights."
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a30def46e88094bc2555f7"
+  },
+  "category": "experience",
+  "company": "Gulfnet Singapore Pte. Ltd",
+  "role": "Data Analyst (Part-Time)",
+  "duration": "Sep 2024 – Jan 2025",
+  "work": [
+    "Developed Python outlier detection scripts reducing manual analysis by 30%.",
+    "Evaluated anomaly detection tools for feasibility.",
+    "Customized Yellowfin BI & Amazon Lookout for Metrics."
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a30e1746e88094bc2555f8"
+  },
+  "category": "Internship experience",
+  "company": "Gulfnet Singapore Pte. Ltd",
+  "role": "Data Analyst Intern",
+  "duration": "December 2023 - April 2024",
+  "work": [
+    "Designed a correlation analysis pipeline using Python to analyze relationships between KPIs and deployed it on AWS Lambda for serverless execution.",
+    "Implemented data preprocessing, metric validation, and automated output generation to support scalable analysis."
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a30fe046e88094bc2555f9"
+  },
+  "category": "Internship experience",
+  "company": "Gulfnet Singapore Pte. Ltd",
+  "role": "Data Analyst & Research (Intern)",
+  "duration": "May 2023 – August 2023",
+  "work": [
+    "Built KPI correlation analysis pipeline deployed on AWS Lambda.",
+    "Automated preprocessing and validation."
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a3123d46e88094bc2555fa"
+  },
+  "category": "Internship experience",
+  "company": "Oasis Infobyte",
+  "role": "Data Analyst (Intern)",
+  "duration": "March 2023 – April 2023",
+  "work": [
+    "Month Analyzed datasets related to car sales, customer churn, and employment trends to identify key drivers and patterns.",
+    "Performed data cleaning, EDA, and feature analysis using Python and Excel to support data-driven insights.",
+    "Built analytical models and dashboards to compare outcomes and support business decision-making."
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a3129e46e88094bc2555fb"
+  },
+  "category": "project",
+  "name": "Food Recommendation System",
+  "type": "Professional",
+  "impact": "Real-time QR ordering integration",
+  "tech": [
+    "Python",
+    "LightFM",
+    "FastAPI",
+    "AWS EC2"
+  ],
+  "description": "Built a recommendation system achieving 89% accuracy using LightFM open-source Python based Library."
+},
+{
+  "_id": {
+    "$oid": "69a3146746e88094bc2555fc"
+  },
+  "category": "project",
+  "name": "Sales Forecasting Model",
+  "type": "Professional",
+  "impact": "Improved forecast accuracy by 14%",
+  "tech": [
+    "Python",
+    "Time-Series",
+    "BigML",
+    "Data analysis",
+    "EDA",
+    "Feature Engineering",
+    "Root cause analysis"
+  ],
+  "description": "Resolved stakeholder concerns regarding sales prediction reliability by performing EDA to identify underlying data issues. Rebuilt the model using a curated feature set and optimized Python-based time-series techniques to ensure high-precision output."
+},
+{
+  "_id": {
+    "$oid": "69a3156846e88094bc2555fd"
+  },
+  "category": "project",
+  "name": "Quality of Life Prediction of Breast Cancer Patients using Explainable AI(XAI) ",
+  "type": "Academic",
+  "impact": "Enhanced clinical trust by transforming 'black-box' predictions into interpretable medical insights, identifying key physiological and psychosocial drivers of patient well-being.",
+  "tech": [
+    "Python",
+    "EDA",
+    "ML",
+    "XAI"
+  ],
+  "description": "Developed a machine learning framework to predict Quality of Life outcomes for breast cancer patients. Integrated SHAP/LIME (XAI) to provide clinicians with transparent, feature-level explanations for each prediction, enabling personalized intervention strategies and data-driven palliative care."
+},
+{
+  "_id": {
+    "$oid": "69a3159b46e88094bc2555fe"
+  },
+  "category": "education",
+  "degree": "Master's in Artificial Intelligence & Data Science",
+  "university": "D.Y Patil International University, Pune",
+  "score": "87%",
+  "year": "2022-2024"
+},
+{
+  "_id": {
+    "$oid": "69a315c646e88094bc2555ff"
+  },
+  "category": "education",
+  "degree": "Bachelor's in Mathematics",
+  "university": "Veer Bahadur Singh Purvanchal University, Jaunpur",
+  "score": "63.9%",
+  "year": "2019-2022"
+},
+{
+  "_id": {
+    "$oid": "69a3168346e88094bc255600"
+  },
+  "category": "certification",
+  "name": "Python for Data Science, AI & Development",
+  "provider": "IBM Coursera",
+  "Learning": "Gained hands-on experience in Python programming for data analysis, including data structures, functions, and libraries used in analytics workflows."
+},
+{
+  "_id": {
+    "$oid": "69a316d746e88094bc255601"
+  },
+  "category": "certification",
+  "name": "SQL for Data Analysis and Data Science",
+  "provider": "Udemy",
+  "Learning": [
+    "Hands-on SQL for data extraction, joins, aggregations, subqueries, and analysis-ready datasets.",
+    "Applied SQL techniques to support reporting, trend analysis, and business insights."
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a3179d46e88094bc255602"
+  },
+  "category": "career_vision",
+  "long_term_goal": "To become a successful Data Scientist who can solve critical and real-world business problems using data and AI.",
+  "belief": "Data is not just numbers, it is a decision-making tool that can create real impact when used correctly.",
+  "learning_mindset": "I believe in continuous learning and I actively upskill myself to adapt to new technologies in the fast-evolving AI world.",
+  "future_focus": [
+    "Advanced AI Models",
+    "ML Algorithms",
+    "Real-world AI Applications",
+    "Decision Intelligence",
+    "Scalable Data Systems"
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a317c246e88094bc255603"
+  },
+  "category": "philosophy",
+  "approach": "I focus on solving business problems rather than just building models.",
+  "work_style": [
+    "Understand the problem deeply",
+    "Translate business needs into data problems",
+    "Build scalable solutions",
+    "Deliver actionable insights"
+  ],
+  "adaptability": "I am quick to learn and adapt to new tools, technologies, and industry shifts."
+},
+{
+  "_id": {
+    "$oid": "69a317d946e88094bc255604"
+  },
+  "category": "learning",
+  "current_state": "I am still learning every day and continuously improving my skills.",
+  "focus_areas": [
+    "AI Models",
+    "Machine Learning Algorithms",
+    "Cloud-based AI deployment",
+    "Data-driven decision systems"
+  ],
+  "belief": "In the modern AI world, staying relevant means staying curious and committed to learning."
+},
+{
+  "_id": {
+    "$oid": "69a317f246e88094bc255605"
+  },
+  "category": "identity",
+  "strength": "I enjoy solving real-world problems using structured thinking and data insights.",
+  "motivation": "My goal is to bridge the gap between business challenges and technical solutions.",
+  "unique_trait": "I prefer practical and implementable solutions over theoretical ones."
+},
+{
+  "_id": {
+    "$oid": "69a3181b46e88094bc255606"
+  },
+  "category": "aspiration",
+  "future_role": "To work as a Data Scientist building impactful AI systems.",
+  "impact_goal": "To contribute to business growth by transforming raw data into strategic intelligence.",
+  "long_term_learning_direction": [
+    "AI-driven automation",
+    "Predictive intelligence",
+    "Explainable AI",
+    "Decision-support systems"
+  ]
+},
+{
+  "_id": {
+    "$oid": "69a3184146e88094bc255607"
+  },
+  "category": "motivation",
+  "why_data_science": "I chose Data Science because it allows me to combine analytical thinking with real-world problem solving.",
+  "interest": "I am fascinated by how data can uncover hidden patterns and support better decision-making.",
+  "purpose": "My aim is to use AI and data to create solutions that are practical, scalable, and impactful."
+}]
