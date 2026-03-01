@@ -1,0 +1,726 @@
+{
+  "nodes": [
+    {
+      "id": "chatOllama_0",
+      "position": {
+        "x": 593.8078039391114,
+        "y": -909.9399938981392
+      },
+      "type": "customNode",
+      "data": {
+        "id": "chatOllama_0",
+        "label": "ChatOllama",
+        "version": 5,
+        "name": "chatOllama",
+        "type": "ChatOllama",
+        "baseClasses": [
+          "ChatOllama",
+          "ChatOllama",
+          "BaseChatModel",
+          "BaseLanguageModel",
+          "Runnable"
+        ],
+        "category": "Chat Models",
+        "description": "Chat completion using open-source LLM on Ollama",
+        "inputParams": [
+          {
+            "label": "Connect Credential",
+            "name": "credential",
+            "type": "credential",
+            "credentialNames": [
+              "ollamaApi"
+            ],
+            "optional": true,
+            "id": "chatOllama_0-input-credential-credential",
+            "display": true
+          },
+          {
+            "label": "Base URL",
+            "name": "baseUrl",
+            "type": "string",
+            "default": "http://localhost:11434",
+            "id": "chatOllama_0-input-baseUrl-string",
+            "display": true
+          },
+          {
+            "label": "Model Name",
+            "name": "modelName",
+            "type": "string",
+            "placeholder": "llama2",
+            "id": "chatOllama_0-input-modelName-string",
+            "display": true
+          },
+          {
+            "label": "Temperature",
+            "name": "temperature",
+            "type": "number",
+            "description": "The temperature of the model. Increasing the temperature will make the model answer more creatively. (Default: 0.8). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 0.1,
+            "default": 0.9,
+            "optional": true,
+            "id": "chatOllama_0-input-temperature-number",
+            "display": true
+          },
+          {
+            "label": "Allow Image Uploads",
+            "name": "allowImageUploads",
+            "type": "boolean",
+            "description": "Allow image input. Refer to the <a href=\"https://docs.flowiseai.com/using-flowise/uploads#image\" target=\"_blank\">docs</a> for more details.",
+            "default": false,
+            "optional": true,
+            "id": "chatOllama_0-input-allowImageUploads-boolean",
+            "display": true
+          },
+          {
+            "label": "Streaming",
+            "name": "streaming",
+            "type": "boolean",
+            "default": true,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-streaming-boolean",
+            "display": true
+          },
+          {
+            "label": "JSON Mode",
+            "name": "jsonMode",
+            "type": "boolean",
+            "description": "Coerces model outputs to only return JSON. Specify in the system prompt to return JSON. Ex: Format all responses as JSON object",
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-jsonMode-boolean",
+            "display": true
+          },
+          {
+            "label": "Keep Alive",
+            "name": "keepAlive",
+            "type": "string",
+            "description": "How long to keep connection alive. A duration string (such as \"10m\" or \"24h\")",
+            "default": "5m",
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-keepAlive-string",
+            "display": true
+          },
+          {
+            "label": "Top P",
+            "name": "topP",
+            "type": "number",
+            "description": "Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-topP-number",
+            "display": true
+          },
+          {
+            "label": "Top K",
+            "name": "topK",
+            "type": "number",
+            "description": "Reduces the probability of generating nonsense. A higher value (e.g. 100) will give more diverse answers, while a lower value (e.g. 10) will be more conservative. (Default: 40). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-topK-number",
+            "display": true
+          },
+          {
+            "label": "Mirostat",
+            "name": "mirostat",
+            "type": "number",
+            "description": "Enable Mirostat sampling for controlling perplexity. (default: 0, 0 = disabled, 1 = Mirostat, 2 = Mirostat 2.0). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-mirostat-number",
+            "display": true
+          },
+          {
+            "label": "Mirostat ETA",
+            "name": "mirostatEta",
+            "type": "number",
+            "description": "Influences how quickly the algorithm responds to feedback from the generated text. A lower learning rate will result in slower adjustments, while a higher learning rate will make the algorithm more responsive. (Default: 0.1) Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-mirostatEta-number",
+            "display": true
+          },
+          {
+            "label": "Mirostat TAU",
+            "name": "mirostatTau",
+            "type": "number",
+            "description": "Controls the balance between coherence and diversity of the output. A lower value will result in more focused and coherent text. (Default: 5.0) Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-mirostatTau-number",
+            "display": true
+          },
+          {
+            "label": "Context Window Size",
+            "name": "numCtx",
+            "type": "number",
+            "description": "Sets the size of the context window used to generate the next token. (Default: 2048) Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-numCtx-number",
+            "display": true
+          },
+          {
+            "label": "Number of GPU",
+            "name": "numGpu",
+            "type": "number",
+            "description": "The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable. Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-numGpu-number",
+            "display": true
+          },
+          {
+            "label": "Number of Thread",
+            "name": "numThread",
+            "type": "number",
+            "description": "Sets the number of threads to use during computation. By default, Ollama will detect this for optimal performance. It is recommended to set this value to the number of physical CPU cores your system has (as opposed to the logical number of cores). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-numThread-number",
+            "display": true
+          },
+          {
+            "label": "Repeat Last N",
+            "name": "repeatLastN",
+            "type": "number",
+            "description": "Sets how far back for the model to look back to prevent repetition. (Default: 64, 0 = disabled, -1 = num_ctx). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-repeatLastN-number",
+            "display": true
+          },
+          {
+            "label": "Repeat Penalty",
+            "name": "repeatPenalty",
+            "type": "number",
+            "description": "Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penalize repetitions more strongly, while a lower value (e.g., 0.9) will be more lenient. (Default: 1.1). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-repeatPenalty-number",
+            "display": true
+          },
+          {
+            "label": "Stop Sequence",
+            "name": "stop",
+            "type": "string",
+            "rows": 4,
+            "placeholder": "AI assistant:",
+            "description": "Sets the stop sequences to use. Use comma to seperate different sequences. Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-stop-string",
+            "display": true
+          },
+          {
+            "label": "Tail Free Sampling",
+            "name": "tfsZ",
+            "type": "number",
+            "description": "Tail free sampling is used to reduce the impact of less probable tokens from the output. A higher value (e.g., 2.0) will reduce the impact more, while a value of 1.0 disables this setting. (Default: 1). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatOllama_0-input-tfsZ-number",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Cache",
+            "name": "cache",
+            "type": "BaseCache",
+            "optional": true,
+            "id": "chatOllama_0-input-cache-BaseCache",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "cache": "",
+          "baseUrl": "http://localhost:11434",
+          "modelName": "llama3.2",
+          "temperature": "0.7",
+          "allowImageUploads": "",
+          "streaming": true,
+          "jsonMode": "",
+          "keepAlive": "5m",
+          "topP": "",
+          "topK": "",
+          "mirostat": "",
+          "mirostatEta": "",
+          "mirostatTau": "",
+          "numCtx": "",
+          "numGpu": "",
+          "numThread": "",
+          "repeatLastN": "",
+          "repeatPenalty": "",
+          "stop": "",
+          "tfsZ": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "chatOllama_0-output-chatOllama-ChatOllama|ChatOllama|BaseChatModel|BaseLanguageModel|Runnable",
+            "name": "chatOllama",
+            "label": "ChatOllama",
+            "description": "Chat completion using open-source LLM on Ollama",
+            "type": "ChatOllama | ChatOllama | BaseChatModel | BaseLanguageModel | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 778,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 593.8078039391114,
+        "y": -909.9399938981392
+      },
+      "dragging": false
+    },
+    {
+      "id": "customDocumentLoader_0",
+      "position": {
+        "x": 146.1484512510212,
+        "y": -546.8703490443311
+      },
+      "type": "customNode",
+      "data": {
+        "id": "customDocumentLoader_0",
+        "label": "Custom Document Loader",
+        "version": 1,
+        "name": "customDocumentLoader",
+        "type": "Document",
+        "baseClasses": [
+          "Document"
+        ],
+        "category": "Document Loaders",
+        "description": "Custom function for loading documents",
+        "inputParams": [
+          {
+            "label": "Input Variables",
+            "name": "functionInputVariables",
+            "description": "Input variables can be used in the function with prefix $. For example: $var",
+            "type": "json",
+            "optional": true,
+            "acceptVariable": true,
+            "list": true,
+            "id": "customDocumentLoader_0-input-functionInputVariables-json",
+            "display": true
+          },
+          {
+            "label": "Javascript Function",
+            "name": "javascriptFunction",
+            "type": "code",
+            "description": "Must return an array of document objects containing metadata and pageContent if \"Document\" is selected in the output. If \"Text\" is selected in the output, it must return a string.",
+            "placeholder": "return [\n  {\n    pageContent: 'Document Content',\n    metadata: {\n      title: 'Document Title',\n    }\n  }\n]",
+            "id": "customDocumentLoader_0-input-javascriptFunction-code",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "functionInputVariables": "",
+          "javascriptFunction": "const { MongoClient } = require('mongodb');\n\nconst url = 'mongodb://127.0.0.1:27017';\nconst client = new MongoClient(url);\n\ntry {\n    await client.connect();\n\n    const db = client.db('my_portfolio');\n    const collection = db.collection('portfolio_database');\n\n    const rawData = await collection.find({}).toArray();\n\n    const docs = rawData.map((item) => {\n        const { _id, category, ...rest } = item;\n\n        let formattedText = \"\";\n\n        switch(category){\n\n            case \"personal\":\n                formattedText = `Khushboo Gupta is a ${rest.role} based in ${rest.location}. She can be contacted via email ${rest.email}.`;\n                break;\n\n            case \"summary\":\n                formattedText = `Professional Summary: ${rest.profile}`;\n                break;\n\n            case \"skills\":\n                formattedText = `Khushboo's technical skills include ${rest.technical?.join(\", \")}. Her soft skills include ${rest.soft?.join(\", \")}.`;\n                break;\n\n            case \"experience\":\n                formattedText = `She worked at ${rest.company} as a ${rest.role} during ${rest.duration}. Key contributions: ${rest.work?.join(\" \")}`;\n                break;\n\n            case \"project\":\n                formattedText = `Project: ${rest.name}. Type: ${rest.type}. Built using ${rest.tech?.join(\", \")}. Impact: ${rest.impact}. Description: ${rest.description}`;\n                break;\n\n            case \"education\":\n                formattedText = `She completed ${rest.degree} from ${rest.university} with a score of ${rest.score} during ${rest.year}.`;\n                break;\n\n            case \"certification\":\n                formattedText = `Certification: ${rest.name} from ${rest.provider}.`;\n                break;\n\n            case \"career_vision\":\n                formattedText = `Her long-term goal is to ${rest.long_term_goal}. She believes ${rest.belief}. She focuses on ${rest.future_focus?.join(\", \")}.`;\n                break;\n\n            case \"philosophy\":\n                formattedText = `Her work philosophy: ${rest.approach}. She follows this approach: ${rest.work_style?.join(\", \")}.`;\n                break;\n\n            case \"learning\":\n                formattedText = `She continuously improves herself by focusing on ${rest.focus_areas?.join(\", \")}.`;\n                break;\n\n            case \"identity\":\n                formattedText = `She enjoys solving real-world problems and aims to ${rest.motivation}.`;\n                break;\n\n            case \"aspiration\":\n                formattedText = `Her future aspiration is to become ${rest.future_role} and contribute through ${rest.long_term_learning_direction?.join(\", \")}.`;\n                break;\n\n            case \"mission\":\n                formattedText = `Her personal mission is: ${rest.vision}`;\n                break;\n\n            case \"motivation\":\n                formattedText = `She chose Data Science because ${rest.why_data_science}.`;\n                break;\n\n            default:\n                formattedText = JSON.stringify(rest);\n        }\n\n        return {\n            pageContent: formattedText,\n            metadata: {\n                mongo_id: _id.toString(),\n                category: category,\n                source: \"my_portfolio\"\n            }\n        }\n    });\n\n    if (!docs.length) {\n        return [{ pageContent: \"No portfolio data found\", metadata: {} }];\n    }\n\n    return docs;\n\n} catch (error) {\n    return [{ \n        pageContent: `Error connecting: ${error.message}`, \n        metadata: { error: true } \n    }];\n} finally {\n    await client.close();\n}"
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "Array of document objects containing metadata and pageContent",
+            "options": [
+              {
+                "id": "customDocumentLoader_0-output-document-Document|json",
+                "name": "document",
+                "label": "Document",
+                "description": "Array of document objects containing metadata and pageContent",
+                "type": "Document | json"
+              },
+              {
+                "id": "customDocumentLoader_0-output-text-string|json",
+                "name": "text",
+                "label": "Text",
+                "description": "Concatenated string from pageContent of documents",
+                "type": "string | json"
+              }
+            ],
+            "default": "document"
+          }
+        ],
+        "outputs": {
+          "output": "document"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 583,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 146.1484512510212,
+        "y": -546.8703490443311
+      },
+      "dragging": false
+    },
+    {
+      "id": "conversationalRetrievalQAChain_0",
+      "position": {
+        "x": 1029.8996666712858,
+        "y": -353.53636125880365
+      },
+      "type": "customNode",
+      "data": {
+        "id": "conversationalRetrievalQAChain_0",
+        "label": "Conversational Retrieval QA Chain",
+        "version": 3,
+        "name": "conversationalRetrievalQAChain",
+        "type": "ConversationalRetrievalQAChain",
+        "baseClasses": [
+          "ConversationalRetrievalQAChain",
+          "BaseChain",
+          "Runnable"
+        ],
+        "category": "Chains",
+        "description": "Document QA - built on RetrievalQAChain to provide a chat history component",
+        "inputParams": [
+          {
+            "label": "Return Source Documents",
+            "name": "returnSourceDocuments",
+            "type": "boolean",
+            "optional": true,
+            "id": "conversationalRetrievalQAChain_0-input-returnSourceDocuments-boolean",
+            "display": true
+          },
+          {
+            "label": "Rephrase Prompt",
+            "name": "rephrasePrompt",
+            "type": "string",
+            "description": "Using previous chat history, rephrase question into a standalone question",
+            "warning": "Prompt must include input variables: {chat_history} and {question}",
+            "rows": 4,
+            "additionalParams": true,
+            "optional": true,
+            "default": "Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.\n\nChat History:\n{chat_history}\nFollow Up Input: {question}\nStandalone Question:",
+            "id": "conversationalRetrievalQAChain_0-input-rephrasePrompt-string",
+            "display": true
+          },
+          {
+            "label": "Response Prompt",
+            "name": "responsePrompt",
+            "type": "string",
+            "description": "Taking the rephrased question, search for answer from the provided context",
+            "warning": "Prompt must include input variable: {context}",
+            "rows": 4,
+            "additionalParams": true,
+            "optional": true,
+            "default": "I want you to act as a document that I am having a conversation with. Your name is \"AI Assistant\". Using the provided context, answer the user's question to the best of your ability using the resources provided.\nIf there is nothing in the context relevant to the question at hand, just say \"Hmm, I'm not sure\" and stop after that. Refuse to answer any question not about the info. Never break character.\n------------\n{context}\n------------\nREMEMBER: If there is no relevant information within the context, just say \"Hmm, I'm not sure\". Don't try to make up an answer. Never break character.",
+            "id": "conversationalRetrievalQAChain_0-input-responsePrompt-string",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Chat Model",
+            "name": "model",
+            "type": "BaseChatModel",
+            "id": "conversationalRetrievalQAChain_0-input-model-BaseChatModel",
+            "display": true
+          },
+          {
+            "label": "Vector Store Retriever",
+            "name": "vectorStoreRetriever",
+            "type": "BaseRetriever",
+            "id": "conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever",
+            "display": true
+          },
+          {
+            "label": "Memory",
+            "name": "memory",
+            "type": "BaseMemory",
+            "optional": true,
+            "description": "If left empty, a default BufferMemory will be used",
+            "id": "conversationalRetrievalQAChain_0-input-memory-BaseMemory",
+            "display": true
+          },
+          {
+            "label": "Input Moderation",
+            "description": "Detect text that could generate harmful output and prevent it from being sent to the language model",
+            "name": "inputModeration",
+            "type": "Moderation",
+            "optional": true,
+            "list": true,
+            "id": "conversationalRetrievalQAChain_0-input-inputModeration-Moderation",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "model": "{{chatOllama_0.data.instance}}",
+          "vectorStoreRetriever": "{{memoryVectorStore_0.data.instance}}",
+          "memory": "",
+          "returnSourceDocuments": "",
+          "rephrasePrompt": "Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.\n\nChat History:\n{chat_history}\nFollow Up Input: {question}\nStandalone Question:",
+          "responsePrompt": "I want you to act as a document that I am having a conversation with. Your name is \"AI Assistant\". Using the provided context, answer the user's question to the best of your ability using the resources provided.\nIf there is nothing in the context relevant to the question at hand, just say \"Hmm, I'm not sure\" and stop after that. Refuse to answer any question not about the info. Never break character.\n------------\n{context}\n------------\nREMEMBER: If there is no relevant information within the context, just say \"Hmm, I'm not sure\". Don't try to make up an answer. Never break character.",
+          "inputModeration": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "conversationalRetrievalQAChain_0-output-conversationalRetrievalQAChain-ConversationalRetrievalQAChain|BaseChain|Runnable",
+            "name": "conversationalRetrievalQAChain",
+            "label": "ConversationalRetrievalQAChain",
+            "description": "Document QA - built on RetrievalQAChain to provide a chat history component",
+            "type": "ConversationalRetrievalQAChain | BaseChain | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 538,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1029.8996666712858,
+        "y": -353.53636125880365
+      },
+      "dragging": false
+    },
+    {
+      "id": "memoryVectorStore_0",
+      "position": {
+        "x": 595.0147578925214,
+        "y": -84.67704549666135
+      },
+      "type": "customNode",
+      "data": {
+        "id": "memoryVectorStore_0",
+        "label": "In-Memory Vector Store",
+        "version": 1,
+        "name": "memoryVectorStore",
+        "type": "Memory",
+        "baseClasses": [
+          "Memory",
+          "VectorStoreRetriever",
+          "BaseRetriever"
+        ],
+        "category": "Vector Stores",
+        "description": "In-memory vectorstore that stores embeddings and does an exact, linear search for the most similar embeddings.",
+        "inputParams": [
+          {
+            "label": "Top K",
+            "name": "topK",
+            "description": "Number of top results to fetch. Default to 4",
+            "placeholder": "4",
+            "type": "number",
+            "optional": true,
+            "id": "memoryVectorStore_0-input-topK-number",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Document",
+            "name": "document",
+            "type": "Document",
+            "list": true,
+            "optional": true,
+            "id": "memoryVectorStore_0-input-document-Document",
+            "display": true
+          },
+          {
+            "label": "Embeddings",
+            "name": "embeddings",
+            "type": "Embeddings",
+            "id": "memoryVectorStore_0-input-embeddings-Embeddings",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "document": [
+            "{{customDocumentLoader_0.data.instance}}"
+          ],
+          "embeddings": "{{ollamaEmbedding_0.data.instance}}",
+          "topK": ""
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "",
+            "options": [
+              {
+                "id": "memoryVectorStore_0-output-retriever-Memory|VectorStoreRetriever|BaseRetriever",
+                "name": "retriever",
+                "label": "Memory Retriever",
+                "description": "",
+                "type": "Memory | VectorStoreRetriever | BaseRetriever"
+              },
+              {
+                "id": "memoryVectorStore_0-output-vectorStore-Memory|VectorStore",
+                "name": "vectorStore",
+                "label": "Memory Vector Store",
+                "description": "",
+                "type": "Memory | VectorStore"
+              }
+            ],
+            "default": "retriever"
+          }
+        ],
+        "outputs": {
+          "output": "retriever"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 413,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 595.0147578925214,
+        "y": -84.67704549666135
+      },
+      "dragging": false
+    },
+    {
+      "id": "ollamaEmbedding_0",
+      "position": {
+        "x": 156.35865600522013,
+        "y": 59.131384681578254
+      },
+      "type": "customNode",
+      "data": {
+        "id": "ollamaEmbedding_0",
+        "label": "Ollama Embeddings",
+        "version": 2,
+        "name": "ollamaEmbedding",
+        "type": "OllamaEmbeddings",
+        "baseClasses": [
+          "OllamaEmbeddings",
+          "Embeddings"
+        ],
+        "category": "Embeddings",
+        "description": "Generate embeddings for a given text using open source model on Ollama",
+        "inputParams": [
+          {
+            "label": "Base URL",
+            "name": "baseUrl",
+            "type": "string",
+            "default": "http://localhost:11434",
+            "id": "ollamaEmbedding_0-input-baseUrl-string",
+            "display": true
+          },
+          {
+            "label": "Model Name",
+            "name": "modelName",
+            "type": "string",
+            "placeholder": "llama2",
+            "id": "ollamaEmbedding_0-input-modelName-string",
+            "display": true
+          },
+          {
+            "label": "Number of GPU",
+            "name": "numGpu",
+            "type": "number",
+            "description": "The number of layers to send to the GPU(s). On macOS it defaults to 1 to enable metal support, 0 to disable. Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "ollamaEmbedding_0-input-numGpu-number",
+            "display": true
+          },
+          {
+            "label": "Number of Thread",
+            "name": "numThread",
+            "type": "number",
+            "description": "Sets the number of threads to use during computation. By default, Ollama will detect this for optimal performance. It is recommended to set this value to the number of physical CPU cores your system has (as opposed to the logical number of cores). Refer to <a target=\"_blank\" href=\"https://github.com/jmorganca/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values\">docs</a> for more details",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "ollamaEmbedding_0-input-numThread-number",
+            "display": true
+          },
+          {
+            "label": "Use MMap",
+            "name": "useMMap",
+            "type": "boolean",
+            "default": true,
+            "optional": true,
+            "additionalParams": true,
+            "id": "ollamaEmbedding_0-input-useMMap-boolean",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "baseUrl": "http://localhost:11434",
+          "modelName": "llama3.2",
+          "numGpu": "",
+          "numThread": "",
+          "useMMap": true
+        },
+        "outputAnchors": [
+          {
+            "id": "ollamaEmbedding_0-output-ollamaEmbedding-OllamaEmbeddings|Embeddings",
+            "name": "ollamaEmbedding",
+            "label": "OllamaEmbeddings",
+            "description": "Generate embeddings for a given text using open source model on Ollama",
+            "type": "OllamaEmbeddings | Embeddings"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 436,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 156.35865600522013,
+        "y": 59.131384681578254
+      },
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "chatOllama_0",
+      "sourceHandle": "chatOllama_0-output-chatOllama-ChatOllama|ChatOllama|BaseChatModel|BaseLanguageModel|Runnable",
+      "target": "conversationalRetrievalQAChain_0",
+      "targetHandle": "conversationalRetrievalQAChain_0-input-model-BaseChatModel",
+      "type": "buttonedge",
+      "id": "chatOllama_0-chatOllama_0-output-chatOllama-ChatOllama|ChatOllama|BaseChatModel|BaseLanguageModel|Runnable-conversationalRetrievalQAChain_0-conversationalRetrievalQAChain_0-input-model-BaseChatModel"
+    },
+    {
+      "source": "memoryVectorStore_0",
+      "sourceHandle": "memoryVectorStore_0-output-retriever-Memory|VectorStoreRetriever|BaseRetriever",
+      "target": "conversationalRetrievalQAChain_0",
+      "targetHandle": "conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever",
+      "type": "buttonedge",
+      "id": "memoryVectorStore_0-memoryVectorStore_0-output-retriever-Memory|VectorStoreRetriever|BaseRetriever-conversationalRetrievalQAChain_0-conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever"
+    },
+    {
+      "source": "customDocumentLoader_0",
+      "sourceHandle": "customDocumentLoader_0-output-document-Document|json",
+      "target": "memoryVectorStore_0",
+      "targetHandle": "memoryVectorStore_0-input-document-Document",
+      "type": "buttonedge",
+      "id": "customDocumentLoader_0-customDocumentLoader_0-output-document-Document|json-memoryVectorStore_0-memoryVectorStore_0-input-document-Document"
+    },
+    {
+      "source": "ollamaEmbedding_0",
+      "sourceHandle": "ollamaEmbedding_0-output-ollamaEmbedding-OllamaEmbeddings|Embeddings",
+      "target": "memoryVectorStore_0",
+      "targetHandle": "memoryVectorStore_0-input-embeddings-Embeddings",
+      "type": "buttonedge",
+      "id": "ollamaEmbedding_0-ollamaEmbedding_0-output-ollamaEmbedding-OllamaEmbeddings|Embeddings-memoryVectorStore_0-memoryVectorStore_0-input-embeddings-Embeddings"
+    }
+  ]
+}
